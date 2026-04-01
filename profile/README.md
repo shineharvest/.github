@@ -1,11 +1,11 @@
 <div align="center">
 
-# ☀️ Shine Harvest
+# Shine Harvest
 
 ### Space-Based Solar Power · Digital Engineering Program
 
 [![Program Status](https://img.shields.io/badge/Status-Phase%200%20·%20Architecture-blue?style=for-the-badge)](#)
-[![Repos](https://img.shields.io/badge/Repos-9%20Active-6366F1?style=for-the-badge)](#program-repositories)
+[![Repos](https://img.shields.io/badge/Repos-10%20Active-6366F1?style=for-the-badge)](#program-repositories)
 [![Demo Readiness](https://img.shields.io/badge/Demo%20Gate-Conditional%20Pass-FBBF24?style=for-the-badge)](#milestone-status)
 [![Classification](https://img.shields.io/badge/All%20Repos-PRIVATE%20·%20PROPRIETARY-red?style=for-the-badge)](#)
 
@@ -27,7 +27,11 @@ This GitHub organization is the **private digital engineering backbone** of the 
 
 ```
                     ┌─────────────────────┐
-                    │   ORBITAL PLATFORM   │  Energy generation & availability
+                    │   SOLAR GENERATION   │  Collection, generation state, output
+                    └──────────┬──────────┘
+                               │
+                    ┌──────────▼──────────┐
+                    │   ORBITAL PLATFORM   │  Platform state, availability
                     └──────────┬──────────┘
                                │
                     ┌──────────▼──────────┐
@@ -54,39 +58,45 @@ This GitHub organization is the **private digital engineering backbone** of the 
 
 | Repo | Purpose | Criticality |
 |------|---------|-------------|
-| [`sh-architecture`](https://github.com/shineharvest/sh-architecture) | Mission architecture, ConOps, requirements, ICDs, trade studies, risk, roadmap | 🔴 Critical |
-| [`sh-simulations`](https://github.com/shineharvest/sh-simulations) | Orbital, transmission, reliability, and economics simulations | 🔴 Critical |
-| [`sh-verification`](https://github.com/shineharvest/sh-verification) | Requirements traceability, evidence control, milestone gates | 🔴 Critical |
-| [`sh-security`](https://github.com/shineharvest/sh-security) | Threat models, trust boundaries, hardening, control integrity | 🔴 Critical |
+| [`sh-architecture`](https://github.com/shineharvest/sh-architecture) | Mission architecture, ConOps, requirements, ICDs, trade studies, risk, roadmap | Critical |
+| [`sh-simulations`](https://github.com/shineharvest/sh-simulations) | Orbital, transmission, reliability, and economics simulations | Critical |
+| [`sh-verification`](https://github.com/shineharvest/sh-verification) | Requirements traceability, evidence control, milestone gates | Critical |
+| [`sh-security`](https://github.com/shineharvest/sh-security) | Threat models, trust boundaries, hardening, control integrity | Critical |
+
+### Physical Operations
+
+| Repo | Purpose | Criticality |
+|------|---------|-------------|
+| [`sh-solar-generation`](https://github.com/shineharvest/sh-solar-generation) | Solar collection architecture, generation-state modeling, sunlight/eclipse logic, generated-power output | High |
+| [`sh-orbital-platform`](https://github.com/shineharvest/sh-orbital-platform) | Platform state modeling, energy availability semantics, constellation coordination | High |
 
 ### Core Operations
 
 | Repo | Purpose | Criticality |
 |------|---------|-------------|
-| [`sh-beam-control`](https://github.com/shineharvest/sh-beam-control) | Phased-array steering, safety interlocks, transmission-state logic | 🔴 Safety-Critical |
-| [`sh-ground-segment`](https://github.com/shineharvest/sh-ground-segment) | Site readiness, telemetry interpretation, grid integration | 🔴 Critical |
-| [`sh-autonomy`](https://github.com/shineharvest/sh-autonomy) | Fleet coordination, anomaly detection, scheduling | 🟠 High |
-| [`sh-orbital-platform`](https://github.com/shineharvest/sh-orbital-platform) | Platform state modeling, energy availability semantics | 🟠 High |
+| [`sh-beam-control`](https://github.com/shineharvest/sh-beam-control) | Phased-array steering, safety interlocks, transmission-state logic | Safety-Critical |
+| [`sh-ground-segment`](https://github.com/shineharvest/sh-ground-segment) | Site readiness, telemetry interpretation, grid integration | Critical |
+| [`sh-autonomy`](https://github.com/shineharvest/sh-autonomy) | Fleet coordination, anomaly detection, scheduling | High |
 
 ### Value Layer
 
 | Repo | Purpose | Criticality |
 |------|---------|-------------|
-| [`sh-market-layer`](https://github.com/shineharvest/sh-market-layer) | Dispatch, delivery accounting, settlement, pricing | 🟠 High |
+| [`sh-market-layer`](https://github.com/shineharvest/sh-market-layer) | Dispatch, delivery accounting, settlement, pricing | High |
 
 ## Milestone Status
 
 | Milestone | Tag | Status |
 |-----------|-----|--------|
-| Org Baseline | `ORG-BASELINE-v1` | ✅ Ready |
-| System Requirements Review | `SRR-v1` | 🔄 In Progress |
-| Architecture Baseline | `ARCH-BASELINE-v1` | 🔄 In Progress |
-| Simulation Baseline | `SIM-BASELINE-v1` | 🔄 In Progress |
-| Verification Baseline | `VNV-BASELINE-v1` | 🔄 In Progress |
-| Security Baseline | `SEC-BASELINE-v1` | 🔄 In Progress |
-| Operations Baseline | `OPS-BASELINE-v1` | 📋 Planned |
-| Demo Readiness | `DEMO-READY-v1` | ⚠️ Conditional Pass |
-| Pilot Readiness | `PILOT-READY-v1` | ⬜ Not Started |
+| Org Baseline | `ORG-BASELINE-v1` | PASS |
+| System Requirements Review | `SRR-v1` | IN PROGRESS |
+| Architecture Baseline | `ARCH-BASELINE-v1` | IN PROGRESS |
+| Simulation Baseline | `SIM-BASELINE-v1` | IN PROGRESS |
+| Verification Baseline | `VNV-BASELINE-v1` | IN PROGRESS |
+| Security Baseline | `SEC-BASELINE-v1` | IN PROGRESS |
+| Operations Baseline | `OPS-BASELINE-v1` | PLANNED |
+| Demo Readiness | `DEMO-READY-v1` | CONDITIONAL PASS |
+| Pilot Readiness | `PILOT-READY-v1` | NOT STARTED |
 
 ## Program Phases
 
