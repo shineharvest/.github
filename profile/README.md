@@ -2,11 +2,11 @@
 
 <br>
 
-<img src="https://raw.githubusercontent.com/shineharvest/.github/main/profile/logo.png" alt="Shine Harvest" width="280">
-
-<br>
-
-# SHINE HARVEST
+<picture>
+  <source media="(prefers-color-scheme: dark)" srcset="https://raw.githubusercontent.com/shineharvest/.github/main/profile/logo-dark.png">
+  <source media="(prefers-color-scheme: light)" srcset="https://raw.githubusercontent.com/shineharvest/.github/main/profile/logo-light.png">
+  <img src="https://raw.githubusercontent.com/shineharvest/.github/main/profile/logo-light.png" alt="Shine Harvest" width="420">
+</picture>
 
 #### SPACE-BASED SOLAR POWER
 
