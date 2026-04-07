@@ -49,58 +49,9 @@ The architecture distinguishes five layers of physical truth and three cross-cut
 
 ## System Architecture
 
-```
-                                                                         GOVERNANCE
-    PHYSICAL TRUTH CHAIN                                                 ─────────
-    ──────────────────
-
-    ┌─────────────────────────────┐                              ┌──────────────────┐
-    │      SOLAR GENERATION       │  Collection state            │                  │
-    │                             │  Generation output           │    ARCHITECTURE   │
-    │  sh-solar-generation        │  Eclipse / degradation       │                  │
-    └──────────────┬──────────────┘                              │  Requirements    │
-                   │                                             │  State dictionary │
-                   │  SH-ICD-SOL-ORB-001                        │  Interface matrix │
-                   │                                             │  ConOps / ICDs   │
-    ┌──────────────▼──────────────┐                              │                  │
-    │      ORBITAL PLATFORM       │  Platform state              └──────────────────┘
-    │                             │  Availability
-    │  sh-orbital-platform        │  Constellation               ┌──────────────────┐
-    └──────────────┬──────────────┘                              │                  │
-                   │                                             │   VERIFICATION    │
-                   │  SH-ICD-ORB-BMC-001                        │                  │
-                   │                                             │  Trace matrix    │
-    ┌──────────────▼──────────────┐                              │  XRV cases       │
-    │       BEAM CONTROL          │  Transmission state          │  Evidence index  │
-    │                             │  Safety interlocks           │  Milestone gates │
-    │  sh-beam-control            │  Mode selection              │                  │
-    └──────────────┬──────────────┘                              └──────────────────┘
-                   │
-                   │  SH-ICD-BMC-GND-001                        ┌──────────────────┐
-                   │                                             │                  │
-    ┌──────────────▼──────────────┐                              │    SECURITY       │
-    │      GROUND SEGMENT         │  Site readiness              │                  │
-    │                             │  Telemetry                   │  Threat models   │
-    │  sh-ground-segment          │  Grid interface              │  Trust boundaries│
-    └──────────────┬──────────────┘                              │  Control integrity│
-                   │                                             │                  │
-                   │  SH-ICD-GND-MKT-001                        └──────────────────┘
-                   │
-    ┌──────────────▼──────────────┐
-    │       MARKET LAYER          │  Dispatch state              ┌──────────────────┐
-    │                             │  Delivery accounting         │                  │
-    │  sh-market-layer            │  Settlement                  │    SIMULATIONS    │
-    └─────────────────────────────┘                              │                  │
-                                                                 │  Scenario models │
-    ┌─────────────────────────────┐                              │  Evidence output │
-    │        AUTONOMY             │  Coordination                │  Benchmarks      │
-    │                             │  Anomaly handling            │                  │
-    │  sh-autonomy                │  Scheduling                  └──────────────────┘
-    └─────────────────────────────┘
-         ▲    ▲    ▲    ▲
-         │    │    │    │
-        SOL  ORB  BMC  GND    (consumes state from all operational layers)
-```
+<div align="center">
+<img src="https://raw.githubusercontent.com/shineharvest/.github/main/profile/diagrams/system-architecture.svg" alt="Shine Harvest System Architecture" width="820">
+</div>
 
 **Design principle:** Each layer publishes its own truth. Downstream layers consume that truth — they do not invent it or silently widen its meaning.
 
