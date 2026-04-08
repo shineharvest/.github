@@ -237,18 +237,51 @@ All state terms are defined in `sh-architecture/docs/state-dictionary-v0.1.md`. 
 
 ## Key Documents
 
+### Architecture and Governance
+
 | Document | Location | Version |
 |:---------|:---------|:--------|
-| Program Handbook | `sh-architecture/docs/program-handbook-v0.1.md` | 0.2 |
+| Program Handbook | `sh-architecture/docs/program-handbook-v0.2.md` | 0.2 |
 | State Dictionary | `sh-architecture/docs/state-dictionary-v0.1.md` | 0.2 |
 | Interface Dependency Matrix | `sh-architecture/icd/cross-repo-interface-dependency-matrix-v0.2.md` | 0.2 |
 | System Requirements | `sh-architecture/requirements/system-requirements-v0.1.md` | 0.1 |
 | Concept of Operations | `sh-architecture/conops/conops-v0.1.md` | 0.1 |
 | Risk Register | `sh-architecture/risk/risk-register-v0.1.md` | 0.1 |
+
+### Strategic Intelligence
+
+| Document | Location | Version |
+|:---------|:---------|:--------|
+| Competitive Landscape | `sh-architecture/docs/competitive-landscape-v0.1.md` | 0.1 |
+| Capability Stack | `sh-architecture/docs/capability-stack-v0.1.md` | 0.1 |
+| Strategy Reset | `sh-architecture/docs/strategy-reset-v0.1.md` | 0.1 |
+| Regional Watchlist | `sh-architecture/docs/regional-watchlist-v0.1.md` | 0.1 |
+| Master Document Registry | `sh-architecture/docs/master-document-registry-v0.1.md` | 0.1 |
+| Design Process | `sh-architecture/docs/design-process-v0.1.md` | 0.1 |
+| Updated Roadmap | `sh-architecture/roadmap/roadmap-v0.2.md` | 0.2 |
+
+### Convergence Technologies
+
+| Document | Location | Version |
+|:---------|:---------|:--------|
+| Q-PAC Architecture | `sh-beam-control/docs/q-pac-architecture-v0.1.md` | 0.1 |
+| AMPB Architecture | `sh-beam-control/docs/ampb-architecture-v0.1.md` | 0.1 |
+| ANASO Architecture | `sh-autonomy/docs/anaso-architecture-v0.1.md` | 0.1 |
+| DSA Architecture | `sh-orbital-platform/docs/dsa-architecture-v0.1.md` | 0.1 |
+| BC-DEM Architecture | `sh-market-layer/docs/bc-dem-architecture-v0.1.md` | 0.1 |
+| QS-C2 Architecture | `sh-security/docs/qs-c2-architecture-v0.1.md` | 0.1 |
+| PV Specifications | `sh-solar-generation/docs/pv-specifications-v0.1.md` | 0.1 |
+
+### Verification and Evidence
+
+| Document | Location | Version |
+|:---------|:---------|:--------|
 | Verification Plan | `sh-verification/verification-plans/vnv-plan-v0.1.md` | 0.1 |
 | Demo Readiness Gate | `sh-verification/milestone-gates/demo-readiness-gate-v0.3.md` | 0.3 |
 | System Threat Model | `sh-security/threat-models/system-threat-model-v0.1.md` | 0.1 |
 | Generation State Model | `sh-solar-generation/docs/generation-state-model-v0.1.md` | 0.1 |
+| Simulation Parameters | `sh-simulations/docs/simulation-parameters-v0.1.md` | 0.1 |
+| Ground Station Design | `sh-ground-segment/docs/ground-station-design-v0.1.md` | 0.1 |
 
 ---
 
