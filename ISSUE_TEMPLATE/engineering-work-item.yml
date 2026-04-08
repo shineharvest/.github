@@ -1,0 +1,36 @@
+name: Engineering Work Item
+description: Track a systems engineering task, analysis, or decision
+labels: ["ENG"]
+body:
+  - type: input
+    id: title
+    attributes:
+      label: Work Item Title
+      placeholder: "e.g. Update beam-to-ground ICD for 10 GHz band change"
+    validations:
+      required: true
+  - type: dropdown
+    id: priority
+    attributes:
+      label: Priority
+      options:
+        - Critical
+        - High
+        - Medium
+        - Low
+    validations:
+      required: true
+  - type: textarea
+    id: description
+    attributes:
+      label: Description
+      placeholder: Describe what needs to be done and why
+    validations:
+      required: true
+  - type: textarea
+    id: acceptance
+    attributes:
+      label: Acceptance Criteria
+      placeholder: List measurable criteria for closure
+    validations:
+      required: true

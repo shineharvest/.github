@@ -1,0 +1,69 @@
+name: CI — Document Quality
+
+on:
+  pull_request:
+    branches: [main, develop]
+  push:
+    branches: [main]
+
+jobs:
+  markdown-lint:
+    name: Markdown Lint
+    runs-on: ubuntu-latest
+    steps:
+      - uses: actions/checkout@v4
+      - uses: DavidAnson/markdownlint-cli2-action@v19
+        with:
+          globs: '**/*.md'
+          config: '.markdownlint.json'
+
+  yaml-lint:
+    name: YAML Validation
+    runs-on: ubuntu-latest
+    steps:
+      - uses: actions/checkout@v4
+      - name: Validate YAML files
+        run: |
+          sudo apt-get install -y yamllint
+          find . -name '*.yml' -o -name '*.yaml' | head -50 | xargs yamllint -d relaxed || true
+
+  link-check:
+    name: Internal Link Check
+    runs-on: ubuntu-latest
+    steps:
+      - uses: actions/checkout@v4
+      - name: Check for broken internal references
+        run: |
+          echo "Checking for references to non-existent files..."
+          errors=0
+          for md in $(find . -name '*.md' -not -path './.git/*'); do
+            # Check for markdown links to local files
+            grep -oP '\[.*?\]\((?!http|#|mailto)([^)]+)\)' "$md" 2>/dev/null | while read -r link; do
+              target=$(echo "$link" | grep -oP '\(([^)]+)\)' | tr -d '()')
+              if [ ! -f "$target" ] && [ ! -f "$(dirname $md)/$target" ]; then
+                echo "WARN: $md references $target (not found)"
+                errors=$((errors + 1))
+              fi
+            done
+          done
+          echo "Link check complete."
+
+  secrets-scan:
+    name: Secrets Scan
+    runs-on: ubuntu-latest
+    steps:
+      - uses: actions/checkout@v4
+      - name: Check for potential secrets
+        run: |
+          echo "Scanning for potential secrets..."
+          found=0
+          # Check for common secret patterns
+          if grep -rn "-----BEGIN.*PRIVATE KEY" --include='*.md' --include='*.yml' --include='*.yaml' --include='*.json' . 2>/dev/null; then
+            echo "ERROR: Private key found"
+            found=1
+          fi
+          if grep -rn "password\s*[:=]\s*['\"]" --include='*.md' --include='*.yml' --include='*.yaml' --include='*.json' . 2>/dev/null; then
+            echo "WARN: Possible password found"
+          fi
+          if [ $found -eq 1 ]; then exit 1; fi
+          echo "Secrets scan complete."

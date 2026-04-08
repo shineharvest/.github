@@ -1,0 +1,70 @@
+# OS files
+.DS_Store
+Thumbs.db
+*.swp
+*.swo
+*~
+
+# Editor/IDE
+.vscode/
+.idea/
+*.sublime-*
+.project
+.classpath
+
+# Build artifacts
+build/
+dist/
+out/
+target/
+*.o
+*.so
+*.dylib
+
+# Python
+__pycache__/
+*.pyc
+*.pyo
+*.egg-info/
+.eggs/
+*.egg
+venv/
+.venv/
+env/
+.env
+
+# Node
+node_modules/
+npm-debug.log*
+yarn-debug.log*
+yarn-error.log*
+
+# Credentials and secrets (NEVER commit)
+*.pem
+*.key
+*.p12
+*.pfx
+*.crt
+*.cer
+.env.local
+.env.*.local
+credentials.json
+secrets.yaml
+secrets.yml
+*.secret
+
+# Simulation outputs (large files)
+*.hdf5
+*.h5
+*.mat
+*.csv.gz
+*.parquet
+
+# Logs
+*.log
+logs/
+
+# Temporary
+tmp/
+temp/
+*.tmp
